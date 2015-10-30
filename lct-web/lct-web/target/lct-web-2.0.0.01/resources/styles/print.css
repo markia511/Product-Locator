@@ -1,0 +1,11 @@
+/* Product Locator Stylesheet */
+/* Author: EPAM Systems       */
+/* -- Hide screen specific elements -- */
+div.top, div.contentTop, div.resultFooter {
+  display: none;
+}
+div.wrapper {
+  min-width: 1000px;
+  margin: 0 auto;
+  padding: 0;
+}

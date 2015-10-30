@@ -1,0 +1,71 @@
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.ko.lct</groupId>
+	<artifactId>build-tools</artifactId>
+	<version>2.0.0</version>
+	<name>Build Tools</name>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<build>
+		<plugins>
+			<plugin> 
+				<groupId>org.apache.maven.plugins</groupId> 
+				<artifactId>maven-jxr-plugin</artifactId> 
+				<version>2.3</version>
+			</plugin> 
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>2.12</version>
+			</plugin>
+		</plugins>
+	</build>
+
+	<reporting>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>3.3</version>
+				<!-- configuration>
+					<locales>en</locales>
+					<outputDirectory>${basedir}/../checkstyle/logs</outputDirectory>
+					<outputEncoding>UTF-8</outputEncoding>
+					<siteDirectory>${basedir}/../checkstyle/logs/site</siteDirectory>
+					<stagingDirectory>${basedir}/../checkstyle/logs</stagingDirectory>
+				</configuration -->
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-jxr-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<aggregate>true</aggregate>
+					<sourcePath>${basedir}/../</sourcePath>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>2.9.1</version>
+				<configuration>
+					<configLocation>${basedir}/src/main/resources/lct/checkstyle.xml</configLocation>
+					<!-- outputDirectory>${basedir}/../checkstyle/logs</outputDirectory -->
+					<sourceDirectory>${basedir}/../</sourceDirectory>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>2.7</version>
+			</plugin>
+		</plugins>
+	</reporting>
+</project>

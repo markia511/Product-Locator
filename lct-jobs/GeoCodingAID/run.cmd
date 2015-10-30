@@ -1,0 +1,1 @@
+java -cp ".;GeoCodingAID.jar;lib\commons-codec-1.6.jar;lib\commons-compress-1.4.1.jar;lib\dom4j-1.6.1.jar;lib\mail-1.4.jar;lib\ojdbc6.jar;lib\poi-3.8.jar;lib\poi-ooxml-3.8.jar;lib\poi-ooxml-schemas-3.8.jar;lib\poi-scratchpad-3.8.jar;xmlbeans-2.3.0.jar" com.ko.lct.job.geocodingaid.GeoCodingAID %1 %2

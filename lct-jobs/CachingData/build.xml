@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project>
+<project basedir="." default="build" name="Geocoder">
+	<description>Product Locator build file</description>
+	<property name="build.dir" location="${basedir}/build" />
+	<property name="job.common.dir" location="${basedir}/../JobCommon" />
+	
+	<path id="compile.class.path">
+		<fileset dir="${basedir}/lib">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+	
+	<target name="prepare">
+		<delete dir="${build.dir}" />
+		<mkdir dir="${build.dir}" />
+	</target>
+	
+	<target name="copy" depends="prepare">
+		<copy todir="${build.dir}">
+			<fileset dir="${basedir}/src">
+				<include name="**/*.java"/>
+			</fileset>
+			<fileset dir="${job.common.dir}/src">
+				<include name="**/JdbcConnectionBroker.java"/>
+				<include name="**/ApplicationException.java"/>
+				<include name="**/EncryptionUtilities.java"/>
+				<include name="**/JobProperties.java"/>
+			</fileset>
+		</copy>
+	</target>
+	
+	<target name="compile" depends="copy">
+		<javac 
+			debug="true"
+			destdir="${build.dir}"
+			encoding="UTF-8"
+			target="1.6"
+			includeantruntime="false">
+			<src path="${build.dir}" />
+			<classpath>
+				<path refid="compile.class.path" />
+			</classpath>
+		</javac>
+	</target>
+	
+	<target name="build" depends="compile">
+		<jar basedir="${build.dir}"
+			destfile="${basedir}/CachingData.jar">
+		</jar>
+	</target>
+</project>
+	

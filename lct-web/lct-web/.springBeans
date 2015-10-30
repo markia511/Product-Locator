@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beansProjectDescription>
+	<version>1</version>
+	<pluginVersion><![CDATA[3.5.1.201404300732-RELEASE]]></pluginVersion>
+	<configSuffixes>
+		<configSuffix><![CDATA[xml]]></configSuffix>
+	</configSuffixes>
+	<enableImports><![CDATA[true]]></enableImports>
+	<configs>
+		<config>java:com.ko.lct.web.config.AppConfig</config>
+		<config>java:com.ko.lct.web.repository.LocatorCache</config>
+		<config>java:com.ko.lct.web.util.LocatorUtility</config>
+		<config>java:com.ko.lct.web.validate.UserCreateValidator</config>
+		<config>java:com.ko.lct.web.validate.UserEditValidator</config>
+		<config>java:com.ko.lct.web.validate.UserPasswordValidator</config>
+		<config>java:com.ko.lct.web.config.WebConfig</config>
+	</configs>
+	<autoconfigs>
+	</autoconfigs>
+	<configSets>
+	</configSets>
+</beansProjectDescription>

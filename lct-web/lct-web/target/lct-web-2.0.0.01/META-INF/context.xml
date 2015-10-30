@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Context>
+	<!--  Environment name="javax.sql.DataSource.Factory"
+		value="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+		type="java.lang.String" 
+		override="true" / -->
+
+	<WatchedResource>WEB-INF/web.xml</WatchedResource>
+	<Resource
+		driverClassName="oracle.jdbc.OracleDriver"
+		factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+		name="jdbc/LctDB"
+		auth="Container"
+		type="javax.sql.DataSource"
+		initialSize="1"
+		maxActive="4"
+		maxIdle="4"
+		maxWait="1"
+		minIdle="0"
+		testOnBorrow="true"
+		testOnReturn="false"
+		validationQuery="select 1 from dual"
+		url="${JDBC_CONNECTION_STRING}"
+		username="${RDS_USERNAME}"
+		password="${RDS_PASSWORD}" />
+		
+		
+  <ResourceLink global="jdbc/LctDB" name="jdbc/LctDB" type="javax.sql.DataSource"/>
+		
+</Context>

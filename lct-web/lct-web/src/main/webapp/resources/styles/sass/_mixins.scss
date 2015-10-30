@@ -1,0 +1,101 @@
+
+@mixin gradient($top-color, $bottom-color) {
+	/* Old browsers */
+	background: mix($top-color, $bottom-color);
+	
+	/* FF3.6+ */
+	background: -moz-linear-gradient(top,  $top-color 0%, $bottom-color 100%);
+	 
+	/* Chrome,Safari4+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top-color), color-stop(100%,$bottom-color));
+	
+	/* Chrome10+,Safari5.1+ */
+	background: -webkit-linear-gradient(top,  $top-color 0%,$bottom-color 100%);
+	
+	/* Opera 11.10+ */
+	background: -o-linear-gradient(top,  $top-color 0%,$bottom-color 100%);
+	
+	/* IE10+ */
+	background: -ms-linear-gradient(top,  $top-color 0%,$bottom-color 100%);
+	
+	/* W3C */
+	background: linear-gradient(to bottom,  $top-color 0%,$bottom-color 100%);
+	
+	.ie8 &, .ie9 & {
+		/* IE6-9 */
+		behavior: url(#{$pie-path});
+		-pie-background: linear-gradient($top-color 0%,$bottom-color 100%);
+	}
+}
+
+@mixin gradient3($average-color) {
+	$top-color: lighten($average-color, 80%);
+	$middle-color: lighten($average-color, 5%);
+	$bottom-color: darken($middle-color, 20%);
+	
+	/* Old browsers */
+	background: $middle-color;
+	
+	/* FF3.6+ */
+	background: -moz-linear-gradient(top,  $top-color 0%, $middle-color 10%, $bottom-color 100%);
+	 
+	/* Chrome,Safari4+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top-color), color-stop(10%,$middle-color), color-stop(100%,$bottom-color));
+	
+	/* Chrome10+,Safari5.1+ */
+	background: -webkit-linear-gradient(top,  $top-color 0%, $middle-color 10%, $bottom-color 100%);
+	
+	/* Opera 11.10+ */
+	background: -o-linear-gradient(top,  $top-color 0%, $middle-color 10%, $bottom-color 100%);
+	
+	/* IE10+ */
+	background: -ms-linear-gradient(top,  $top-color 0%, $middle-color 10%, $bottom-color 100%);
+	
+	/* W3C */
+	background: linear-gradient(to bottom,  $top-color 0%, $middle-color 10%, $bottom-color 100%);
+
+	.ie8 &, .ie9 & {
+		/* IE6-9 */
+		behavior: url(#{$pie-path});
+		-pie-background: linear-gradient(top,  $top-color 0%, $middle-color 10%, $bottom-color 100%);
+		position: relative;
+	}
+	
+}
+ 
+@mixin button($middle-color) {
+/*
+top = #f7fbfc
+middle = #acb2b0
+bottom = #8a9495
+
+border = #798383
+*/
+
+
+	color: #fff;
+	border-radius: 5px;
+	border: 1px solid darken($middle-color, 30%);
+	height: 28px;
+	cursor: pointer;
+	padding: 3px 10px 3px;
+	vertical-align: middle;
+
+	@include gradient3($middle-color);
+
+	&:hover {
+		@include gradient3(darken($middle-color, 10%));
+	}
+	
+	&:disabled {
+		@include gradient3(lighten(desaturate($middle-color, 80%), 40%));
+	}
+	
+	.ie8 &[disabled="disabled"], .ie8 &[disabled] {
+		/* IE8 */
+		behavior: url(#{$pie-path});
+		-pie-background: linear-gradient(top,  #fff 0%, lighten(desaturate($middle-color, 80%), 50%) 10%, lighten(desaturate($middle-color, 80%), 10%) 100%);
+		position: relative;
+	}
+}
+ 

@@ -1,0 +1,1 @@
+FVN=$(sed -n '/^build.version=\([.0-9]*\)\s$/s//\1/p' lct-web/src/main/resources/messages.properties)

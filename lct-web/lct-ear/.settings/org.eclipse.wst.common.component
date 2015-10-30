@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="lct-2.0.0">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/ear-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/application" tag="defaultRootSource"/>
+        <dependent-module archiveName="ojdbc6.jar" deploy-path="/lib" handle="module:/classpath/var/M2_REPO/com/oracle/ojdbc6/11.2.0/ojdbc6-11.2.0.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="lct-ws.war" deploy-path="/" handle="module:/resource/lct-ws/lct-ws">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="lct-web.war" deploy-path="/" handle="module:/resource/lct-web/lct-web">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="lct-web-gfruit.war" deploy-path="/" handle="module:/resource/lct-web-gfruit/lct-web-gfruit">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+    </wb-module>
+</project-modules>

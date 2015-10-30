@@ -1,0 +1,28 @@
+LOGFILE_PATH        =./logs
+LOGFILE_NAME        =load_data_job
+INPUT_DATA_PATH     =./input
+INPUT_FILE_PREFIX   =cbs_dly_geo_lookup_
+DATA_FILE_SUFFIX    =.dat
+DONE_FILE_SUFFIX 	=.done
+OUTPUT_DATA_PATH    =./output
+OUTPUT_FILE_SUFFIX  =_rslt
+PROCESSED_DATA_PATH =./processed
+EXPORT_PATH         =./export
+LIMIT_GEOCODE   	=1000
+
+Database	 =jdbc:oracle:thin:@EVBYMINSD41A8.minsk.epam.com:1521:XE
+Schema		 =PROLOCOWN
+UserID		 =PROLOCOWN
+Password     =lZmZfdq
+
+googleClientId	 =
+#gme-thecocacolacompany
+googlePrivateKey =
+#fYL_6n613b_FbsTm8SyBgSSyqYw=
+
+host             =owamsq.epam.com
+port             =25
+smtpUserName     =
+smtpUserPassword =
+emails           =Kiryl_Vadanosau@epam.com
+mail_from        =Kiryl_Vadanosau@epam.com

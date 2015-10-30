@@ -1,0 +1,23 @@
+LOGFILE_PATH                    =.//logs
+LOGFILE_NAME                    =load_data_job
+IMPORT_FILE_PATH                =.//data
+IMPORT_FILE_NAME                =
+PROCESSED_DATA_PATH  =.//processed
+Database        = jdbc:oracle:thin:jdbc:oracle:thin:@//koshp-scan.uschcg6.savvis.net:1521/KONAP
+Schema          = PROLOCWEB
+UserID          = PROLOCWEB
+Password        = ********
+#START_PARSING_ROW=5570000
+PROCESS_ARRAY_SIZE=1500000
+limitGeocode            =200000
+googleClientId          =gme-thecocacolacompany1
+#gme-thecocacolacompany
+
+googlePrivateKey        =Lcu25z2pZ6oCxU38NFUz_W2s3v0=
+#fYL_6n613b_FbsTm8SyBgSSyqYw=
+
+host = mailmx.beverage.savvis.net
+port = 25
+emails =pavel_ausianik@epam.com
+mail_from =pavel_ausianik@epam.com
+

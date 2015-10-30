@@ -1,0 +1,15 @@
+@import '_variables';
+@import '_mixins';
+
+/* -- Hide screen specific elements -- */
+
+div {
+  &.top, &.contentTop, &.resultFooter {
+    display: none;
+  }
+  &.wrapper {
+    min-width: 1000px;
+    margin: 0 auto;
+    padding: 0;
+  }
+}

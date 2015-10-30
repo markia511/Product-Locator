@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project>
+<project basedir="." default="build" name="GeoCodingAID">
+	<description>Product Locator GeoCodingAID build file</description>
+	<property name="build.dir" location="${basedir}/build" />
+	<property name="job.common.dir" location="${basedir}/../JobCommon" />
+
+	<path id="compile.class.path">
+		<fileset dir="${basedir}/lib">
+			<include name="*.jar" />
+		</fileset>
+	</path>
+	
+	<target name="prepare">
+		<delete dir="${build.dir}" />
+		<mkdir dir="${build.dir}" />
+	</target>
+	
+	<target name="compile" depends="prepare">
+		<javac 
+			debug="true"
+			destdir="${build.dir}"
+			encoding="UTF-8"
+			target="1.6"
+			includeantruntime="false">
+			<src path="${basedir}/src" />
+			<src path="${job.common.dir}/src" />
+			<classpath>
+				<path refid="compile.class.path" />
+			</classpath>
+		</javac>
+	</target>
+	
+	<target name="build" depends="compile">
+		<jar basedir="${build.dir}"
+			destfile="${basedir}/build/GeoCodingAID.jar">
+			<zipfileset dir="${basedir}/src">
+				<include name="**/*.java" />
+			</zipfileset>
+			<zipfileset dir="${job.common.dir}/src">
+				<include name="**/*.java" />
+			</zipfileset>
+		</jar>
+	</target>
+</project>
+	

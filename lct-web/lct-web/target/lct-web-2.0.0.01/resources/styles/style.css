@@ -1,0 +1,636 @@
+/* Product Locator Stylesheet */
+/* Author: EPAM Systems       */
+body {
+  background: url(../images/bg.jpg);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+}
+
+.clearfix {
+  clear: left;
+  zoom: 1;
+}
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: left;
+  height: 0;
+  overflow: hidden;
+}
+
+.wrapper {
+  min-width: 1080px;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+
+/*Top*/
+.top {
+  background: url(../images/header-bg.jpg) -35px 0 repeat-x;
+  position: relative;
+  box-shadow: 0 8px 5px -5px;
+  margin-bottom: 30px;
+}
+
+.ie8 .top {
+  behavior: url(/lct-web/resources/styles/PIE.htc);
+}
+
+.header {
+  background: url(../images/header.jpg) 0 0 no-repeat;
+  height: 62px;
+}
+.header h1 {
+  color: #fff;
+  font-size: 24px;
+  position: absolute;
+  top: 14px;
+  left: 99px;
+  letter-spacing: 1px;
+  font-family: Georgia, serif;
+  text-shadow: 1px 1px 3px #300000;
+}
+
+.ie8 .header h1, .ie9 .header h1 {
+  filter: progid:DXImageTransform.Microsoft.Shadow(color=#300000, direction=120, strength=3);
+}
+
+.header div.logout {
+  float: right;
+  margin-top: 5px;
+  margin-right: 5px;
+}
+.header div.logout table {
+  border: 0px;
+  border-collapse: collapse;
+  height: 60px;
+}
+.header div.logout table td {
+  text-align: right;
+  vertical-align: middle;
+}
+.header div.logout table td a {
+  color: #fff;
+  font-weight: bold;
+  font-size: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+}
+
+/*Content*/
+/*.content {}*/
+.contentTop {
+  margin-bottom: 20px;
+  padding-right: 512px;
+}
+
+.block {
+  border-radius: 10px;
+  box-shadow: 0 0 5px 0;
+  border: 0.1px black solid;
+  padding: 10px 10px 15px 15px;
+  /* Old browsers */
+  background: #f7f8f8;
+  /* FF3.6+ */
+  background: -moz-linear-gradient(top, white 0%, #f0f2f1 100%);
+  /* Chrome,Safari4+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #f0f2f1));
+  /* Chrome10+,Safari5.1+ */
+  background: -webkit-linear-gradient(top, white 0%, #f0f2f1 100%);
+  /* Opera 11.10+ */
+  background: -o-linear-gradient(top, white 0%, #f0f2f1 100%);
+  /* IE10+ */
+  background: -ms-linear-gradient(top, white 0%, #f0f2f1 100%);
+  /* W3C */
+  background: linear-gradient(to bottom, white 0%, #f0f2f1 100%);
+}
+.ie8 .block, .ie9 .block {
+  /* IE6-9 */
+  behavior: url(/lct-web/resources/styles/PIE.htc);
+  -pie-background: linear-gradient(white 0%, #f0f2f1 100%);
+}
+.block h2 {
+  color: #f40009;
+  font-size: 20px;
+  font-weight: normal;
+  margin-bottom: 5px;
+  padding-left: 10px;
+}
+
+.advanced {
+  height: 100%;
+  position: relative;
+}
+.advanced table {
+  width: 100%;
+}
+.advanced td {
+  padding: 10px 6px 5px;
+}
+.advanced label {
+  display: block;
+}
+.advanced select {
+  width: 100%;
+}
+.advanced .text {
+  width: 97%;
+}
+.advanced .inline {
+  display: inline;
+}
+.advanced .radioCell, .advanced .checkboxInclude {
+  padding-bottom: 8px;
+  vertical-align: bottom;
+}
+.advanced fieldset {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.ie8 .advanced fieldset {
+  behavior: url(/lct-web/resources/styles/PIE.htc);
+}
+
+.productInfo {
+  float: left;
+  margin-right: 1%;
+  width: 59%;
+}
+
+.customerLocation {
+  float: left;
+  width: 40%;
+}
+
+.hide {
+  display: none;
+}
+
+/*Keyword Search*/
+.keyword {
+  display: none;
+  min-height: 334px;
+  position: relative;
+}
+.keyword span.required {
+  color: #f40009;
+}
+.keyword .sizeB p {
+  font-size: 10px;
+}
+.keyword table.main_border {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.ie8 .keyword table.main_border {
+  behavior: url(/lct-web/resources/styles/PIE.htc);
+}
+
+.keyword table.main_border td {
+  padding: 10px;
+}
+.keyword label {
+  display: block;
+}
+.keyword select, .keyword .text {
+  width: 100%;
+}
+.keyword .inline {
+  display: inline;
+}
+.keyword .radioCell, .keyword .checkboxInclude {
+  padding-left: 10px;
+  padding-bottom: 12px;
+  vertical-align: bottom;
+}
+
+.showKeywordForm .keyword {
+  display: block;
+}
+.showKeywordForm .advanced {
+  display: none;
+}
+
+.sizeA {
+  width: 50%;
+}
+
+.sizeB {
+  width: 30%;
+}
+
+.sizeC {
+  width: 20%;
+}
+
+.sizeD {
+  width: 15%;
+}
+
+.sizeE {
+  width: 60%;
+}
+
+.sizeF {
+  width: 40%;
+}
+
+.radioCell label, .checkboxInclude label {
+  display: inline;
+  margin-left: 4px;
+  margin-right: 7px;
+}
+
+.map {
+  float: right;
+  width: 462px;
+  margin-right: -512px;
+}
+
+.mapImg {
+  border: 1px solid #b5b5b6;
+}
+
+.searchResults table {
+  border: 1px solid #a9bac0;
+  width: 100%;
+}
+.searchResults a {
+  color: #f40009;
+}
+
+.border {
+  border-right: 1px solid #a9bac0;
+}
+
+.searchResults td {
+  border-width: 0 1px;
+  padding: 5px 5px;
+  background: #fff;
+}
+.searchResults th {
+  font-weight: bold;
+  padding: 5px 5px;
+  text-align: left;
+  vertical-align: top;
+  /* Old browsers */
+  background: #eaf0f0;
+  /* FF3.6+ */
+  background: -moz-linear-gradient(top, #f0f5f5 0%, #e4ebeb 100%);
+  /* Chrome,Safari4+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f0f5f5), color-stop(100%, #e4ebeb));
+  /* Chrome10+,Safari5.1+ */
+  background: -webkit-linear-gradient(top, #f0f5f5 0%, #e4ebeb 100%);
+  /* Opera 11.10+ */
+  background: -o-linear-gradient(top, #f0f5f5 0%, #e4ebeb 100%);
+  /* IE10+ */
+  background: -ms-linear-gradient(top, #f0f5f5 0%, #e4ebeb 100%);
+  /* W3C */
+  background: linear-gradient(to bottom, #f0f5f5 0%, #e4ebeb 100%);
+}
+.ie8 .searchResults th, .ie9 .searchResults th {
+  /* IE6-9 */
+  behavior: url(/lct-web/resources/styles/PIE.htc);
+  -pie-background: linear-gradient(#f0f5f5 0%, #e4ebeb 100%);
+}
+
+.tableH td {
+  border: none;
+  color: #f40009;
+  text-align: center;
+}
+
+.searchResults .cellBg td {
+  background: #f4f5f6;
+}
+
+.sortColumn {
+  float: right;
+}
+
+.sort_asc {
+  background-image: url(../images/sort_asc.png);
+  background-repeat: no-repeat;
+  background-position: 95% center;
+  padding-right: 20px;
+}
+
+.sort_desc {
+  background-image: url(../images/sort_desc.png);
+  background-repeat: no-repeat;
+  background-position: 95% center;
+  padding-right: 20px;
+}
+
+.cap {
+  background: url(../images/cap.png) 0 4px no-repeat;
+  display: inline-block;
+  width: 44px;
+  height: 33px;
+  line-height: 33px;
+  text-align: center;
+  color: #fff;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.resultFooter {
+  margin: 15px 0 5px;
+}
+
+.pager table {
+  float: right;
+  margin-right: -15px;
+}
+.pager td {
+  padding-right: 15px;
+}
+.pager img {
+  margin: -1px 0;
+}
+
+.action li {
+  float: left;
+  padding-right: 10px;
+}
+
+/*Buttons*/
+.buttons {
+  width: 100%;
+  padding: 10px 0 0;
+  vertical-align: bottom;
+}
+
+.left_controls {
+  float: left;
+}
+
+.controls {
+  float: right;
+}
+
+.progressbar {
+  display: none;
+  width: 220px;
+  height: 19px;
+  background: url(../images/progressbar.gif);
+}
+
+.btnGray, .ui-dialog .ui-dialog-buttonpane button {
+  /*
+  top = #f7fbfc
+  middle = #acb2b0
+  bottom = #8a9495
+  
+  border = #798383
+  */
+  color: #fff;
+  border-radius: 5px;
+  border: 1px solid #4e5150;
+  height: 28px;
+  cursor: pointer;
+  padding: 3px 10px 3px;
+  vertical-align: middle;
+  /* Old browsers */
+  background: #a7aaa9;
+  /* FF3.6+ */
+  background: -moz-linear-gradient(top, white 0%, #a7aaa9 10%, #737876 100%);
+  /* Chrome,Safari4+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(10%, #a7aaa9), color-stop(100%, #737876));
+  /* Chrome10+,Safari5.1+ */
+  background: -webkit-linear-gradient(top, white 0%, #a7aaa9 10%, #737876 100%);
+  /* Opera 11.10+ */
+  background: -o-linear-gradient(top, white 0%, #a7aaa9 10%, #737876 100%);
+  /* IE10+ */
+  background: -ms-linear-gradient(top, white 0%, #a7aaa9 10%, #737876 100%);
+  /* W3C */
+  background: linear-gradient(to bottom, white 0%, #a7aaa9 10%, #737876 100%);
+}
+.ie8 .btnGray, .ie8 .ui-dialog .ui-dialog-buttonpane button, .ui-dialog .ui-dialog-buttonpane .ie8 button, .ie9 .btnGray, .ie9 .ui-dialog .ui-dialog-buttonpane button, .ui-dialog .ui-dialog-buttonpane .ie9 button {
+  /* IE6-9 */
+  behavior: url(/lct-web/resources/styles/PIE.htc);
+  -pie-background: linear-gradient(top, white 0%, #a7aaa9 10%, #737876 100%);
+  position: relative;
+}
+.btnGray:hover, .ui-dialog .ui-dialog-buttonpane button:hover {
+  /* Old browsers */
+  background: #8d928f;
+  /* FF3.6+ */
+  background: -moz-linear-gradient(top, white 0%, #8d928f 10%, #5a5e5c 100%);
+  /* Chrome,Safari4+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(10%, #8d928f), color-stop(100%, #5a5e5c));
+  /* Chrome10+,Safari5.1+ */
+  background: -webkit-linear-gradient(top, white 0%, #8d928f 10%, #5a5e5c 100%);
+  /* Opera 11.10+ */
+  background: -o-linear-gradient(top, white 0%, #8d928f 10%, #5a5e5c 100%);
+  /* IE10+ */
+  background: -ms-linear-gradient(top, white 0%, #8d928f 10%, #5a5e5c 100%);
+  /* W3C */
+  background: linear-gradient(to bottom, white 0%, #8d928f 10%, #5a5e5c 100%);
+}
+.ie8 .btnGray:hover, .ie8 .ui-dialog .ui-dialog-buttonpane button:hover, .ui-dialog .ui-dialog-buttonpane .ie8 button:hover, .ie9 .btnGray:hover, .ie9 .ui-dialog .ui-dialog-buttonpane button:hover, .ui-dialog .ui-dialog-buttonpane .ie9 button:hover {
+  /* IE6-9 */
+  behavior: url(/lct-web/resources/styles/PIE.htc);
+  -pie-background: linear-gradient(top, white 0%, #8d928f 10%, #5a5e5c 100%);
+  position: relative;
+}
+.btnGray:disabled, .ui-dialog .ui-dialog-buttonpane button:disabled {
+  /* Old browsers */
+  background: white;
+  /* FF3.6+ */
+  background: -moz-linear-gradient(top, white 0%, white 10%, #cccccc 100%);
+  /* Chrome,Safari4+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(10%, white), color-stop(100%, #cccccc));
+  /* Chrome10+,Safari5.1+ */
+  background: -webkit-linear-gradient(top, white 0%, white 10%, #cccccc 100%);
+  /* Opera 11.10+ */
+  background: -o-linear-gradient(top, white 0%, white 10%, #cccccc 100%);
+  /* IE10+ */
+  background: -ms-linear-gradient(top, white 0%, white 10%, #cccccc 100%);
+  /* W3C */
+  background: linear-gradient(to bottom, white 0%, white 10%, #cccccc 100%);
+}
+.ie8 .btnGray:disabled, .ie8 .ui-dialog .ui-dialog-buttonpane button:disabled, .ui-dialog .ui-dialog-buttonpane .ie8 button:disabled, .ie9 .btnGray:disabled, .ie9 .ui-dialog .ui-dialog-buttonpane button:disabled, .ui-dialog .ui-dialog-buttonpane .ie9 button:disabled {
+  /* IE6-9 */
+  behavior: url(/lct-web/resources/styles/PIE.htc);
+  -pie-background: linear-gradient(top, white 0%, white 10%, #cccccc 100%);
+  position: relative;
+}
+.ie8 .btnGray[disabled="disabled"], .ie8 .ui-dialog .ui-dialog-buttonpane button[disabled="disabled"], .ui-dialog .ui-dialog-buttonpane .ie8 button[disabled="disabled"], .ie8 .btnGray[disabled], .ie8 .ui-dialog .ui-dialog-buttonpane button[disabled], .ui-dialog .ui-dialog-buttonpane .ie8 button[disabled] {
+  /* IE8 */
+  behavior: url(/lct-web/resources/styles/PIE.htc);
+  -pie-background: linear-gradient(top, white 0%, white 10%, #b6b6b6 100%);
+  position: relative;
+}
+
+.btnRed {
+  /*
+  top = #f7fbfc
+  middle = #acb2b0
+  bottom = #8a9495
+  
+  border = #798383
+  */
+  color: #fff;
+  border-radius: 5px;
+  border: 1px solid #330001;
+  height: 28px;
+  cursor: pointer;
+  padding: 3px 10px 3px;
+  vertical-align: middle;
+  /* Old browsers */
+  background: #e60007;
+  /* FF3.6+ */
+  background: -moz-linear-gradient(top, white 0%, #e60007 10%, #800004 100%);
+  /* Chrome,Safari4+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(10%, #e60007), color-stop(100%, #800004));
+  /* Chrome10+,Safari5.1+ */
+  background: -webkit-linear-gradient(top, white 0%, #e60007 10%, #800004 100%);
+  /* Opera 11.10+ */
+  background: -o-linear-gradient(top, white 0%, #e60007 10%, #800004 100%);
+  /* IE10+ */
+  background: -ms-linear-gradient(top, white 0%, #e60007 10%, #800004 100%);
+  /* W3C */
+  background: linear-gradient(to bottom, white 0%, #e60007 10%, #800004 100%);
+}
+.ie8 .btnRed, .ie9 .btnRed {
+  /* IE6-9 */
+  behavior: url(/lct-web/resources/styles/PIE.htc);
+  -pie-background: linear-gradient(top, white 0%, #e60007 10%, #800004 100%);
+  position: relative;
+}
+.btnRed:hover {
+  /* Old browsers */
+  background: #b30005;
+  /* FF3.6+ */
+  background: -moz-linear-gradient(top, white 0%, #b30005 10%, #4d0002 100%);
+  /* Chrome,Safari4+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(10%, #b30005), color-stop(100%, #4d0002));
+  /* Chrome10+,Safari5.1+ */
+  background: -webkit-linear-gradient(top, white 0%, #b30005 10%, #4d0002 100%);
+  /* Opera 11.10+ */
+  background: -o-linear-gradient(top, white 0%, #b30005 10%, #4d0002 100%);
+  /* IE10+ */
+  background: -ms-linear-gradient(top, white 0%, #b30005 10%, #4d0002 100%);
+  /* W3C */
+  background: linear-gradient(to bottom, white 0%, #b30005 10%, #4d0002 100%);
+}
+.ie8 .btnRed:hover, .ie9 .btnRed:hover {
+  /* IE6-9 */
+  behavior: url(/lct-web/resources/styles/PIE.htc);
+  -pie-background: linear-gradient(top, white 0%, #b30005 10%, #4d0002 100%);
+  position: relative;
+}
+.btnRed:disabled {
+  /* Old browsers */
+  background: #e0d1d2;
+  /* FF3.6+ */
+  background: -moz-linear-gradient(top, white 0%, #e0d1d2 10%, #b89495 100%);
+  /* Chrome,Safari4+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(10%, #e0d1d2), color-stop(100%, #b89495));
+  /* Chrome10+,Safari5.1+ */
+  background: -webkit-linear-gradient(top, white 0%, #e0d1d2 10%, #b89495 100%);
+  /* Opera 11.10+ */
+  background: -o-linear-gradient(top, white 0%, #e0d1d2 10%, #b89495 100%);
+  /* IE10+ */
+  background: -ms-linear-gradient(top, white 0%, #e0d1d2 10%, #b89495 100%);
+  /* W3C */
+  background: linear-gradient(to bottom, white 0%, #e0d1d2 10%, #b89495 100%);
+}
+.ie8 .btnRed:disabled, .ie9 .btnRed:disabled {
+  /* IE6-9 */
+  behavior: url(/lct-web/resources/styles/PIE.htc);
+  -pie-background: linear-gradient(top, white 0%, #e0d1d2 10%, #b89495 100%);
+  position: relative;
+}
+.ie8 .btnRed[disabled="disabled"], .ie8 .btnRed[disabled] {
+  /* IE8 */
+  behavior: url(/lct-web/resources/styles/PIE.htc);
+  -pie-background: linear-gradient(top, white 0%, #ebe0e1 10%, #996667 100%);
+  position: relative;
+}
+
+/*Footer*/
+.footer {
+  margin: 10px 0 30px;
+  font-size: 10px;
+}
+.footer p {
+  color: #aaafaf;
+}
+.footer a {
+  color: #aaafaf;
+}
+
+.errorMessage {
+  color: #ff0000;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.errorPanel {
+  padding-top: 10px;
+}
+
+#addGenericDialog, #editGenericDialog {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+}
+#addGenericDialog input, #editGenericDialog input {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+}
+
+#addGenericDialog table, #editGenericDialog table {
+  border-collapse: separate;
+  border-spacing: 10px;
+}
+
+ul.ui-autocomplete {
+  max-height: 300px;
+  overflow-y: scroll;
+}
+ul.ui-autocomplete li.ui-menu-item {
+  font-size: 0.7em;
+}
+
+.ui-dialog .ui-dialog-buttonpane button span {
+  padding: 0px;
+}
+
+#contentTop.adv #map_canvas {
+  height: 415px;
+  min-height: 385px;
+}
+#contentTop.keyw #map_canvas {
+  height: 363px;
+  min-height: 333px;
+}
+
+html.all-ie #contentTop.adv #map_canvas {
+  height: 399px;
+  min-height: 369px;
+}
+html.all-ie #contentTop.keyw #map_canvas {
+  height: 364px;
+  min-height: 334px;
+}
+html.ie8 #contentTop.keyw #map_canvas {
+  height: 364px;
+  min-height: 334px;
+}
+html.ie8 #contentTop.adv #map_canvas {
+  height: 427px;
+  min-height: 397px;
+}
+
+#contentTop.adv div.advanced, #contentTop.keyw div.keyword {
+  display: block;
+}
+#contentTop.adv div.keyword, #contentTop.keyw div.advanced {
+  display: none;
+}

@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.ko.lct</groupId>
+	<artifactId>lct</artifactId>
+	<name>lct</name>
+	<packaging>pom</packaging>
+	<version>2.0.0</version>
+	<description />
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java-version>1.6</java-version>
+		<org.springframework-version>4.0.7.RELEASE</org.springframework-version>
+		<org.springsecurity-version>3.2.5.RELEASE</org.springsecurity-version>
+		<!-- org.aspectj-version>1.8.1</org.aspectj-version -->
+		<org.slf4j-version>1.7.7</org.slf4j-version>
+		<jackson-version>2.4.2</jackson-version>
+		<ehcache-version>2.6.9</ehcache-version>
+		<org.apache.poi-version>3.10.1</org.apache.poi-version>
+		<itext-version>2.1.7</itext-version>
+		<log4j-version>1.2.17</log4j-version>
+		<commons-codec-version>1.9</commons-codec-version>
+		<commons-configuration-version>1.10</commons-configuration-version>
+		<maven-war-plugin-version>2.4</maven-war-plugin-version>
+		<maven-eclipse-plugin-version>2.9</maven-eclipse-plugin-version>
+		<maven-compiler-plugin-version>3.1</maven-compiler-plugin-version>
+		<maven-install-plugin-version>2.5.2</maven-install-plugin-version>
+		<versions-maven-plugin-version>2.1</versions-maven-plugin-version>
+		<jsp-api-version>2.1</jsp-api-version>
+		<maven-ear-plugin-version>2.9.1</maven-ear-plugin-version>
+		<asm-version>5.0.1</asm-version>
+		<validation-api-version>1.1.0.Final</validation-api-version>
+		<sass-maven-plugin-version>1.1.1</sass-maven-plugin-version>
+		<oracle-jdbc-version>11.2.0</oracle-jdbc-version>
+		<org.javassist-version>3.18.2-GA</org.javassist-version>
+		<junit-version>4.11</junit-version>
+	</properties>
+
+	<modules>
+		<module>lct-common</module>
+		<module>lct-ws</module>
+		<module>lct-web</module>
+		<module>lct-web-gfruit</module>
+		<module>lct-ear</module>
+	</modules>
+
+	<profiles>
+		<profile>
+			<id>local_tc</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<env>local_tc</env>
+				<web.service.url>http://127.0.0.1:8080/lct-ws/ws</web.service.url>
+				<http.port>8080</http.port>
+				<https.port>8443</https.port>
+				<google.api.clientId></google.api.clientId>
+				<google.api.channel></google.api.channel>
+			</properties>
+		</profile>
+		<profile>
+			<id>local_was</id>
+			<properties>
+				<env>local_was</env>
+				<web.service.url>http://127.0.0.1:9080/lct-ws/ws</web.service.url>
+				<http.port>9080</http.port>
+				<https.port>9443</https.port>
+				<google.api.clientId></google.api.clientId>
+				<google.api.channel></google.api.channel>
+			</properties>
+		</profile>
+		<profile>
+			<id>test</id>
+			<properties>
+				<env>test</env>
+				<web.service.url>http://127.0.0.1:8080/lct-ws/ws</web.service.url>
+				<http.port>8080</http.port>
+				<https.port>8443</https.port>
+				<google.api.clientId>gme-thecocacolacompany2</google.api.clientId>
+				<google.api.channel>CCNA Customer Care Product Locator</google.api.channel>
+			</properties>
+		</profile>
+		<profile>
+			<id>prod</id>
+			<properties>
+				<env>prod</env>
+				<web.service.url>http://127.0.0.1:8080/lct-ws/ws</web.service.url>
+				<http.port>8080</http.port>
+				<https.port>8443</https.port>
+				<google.api.clientId>gme-thecocacolacompany2</google.api.clientId>
+				<google.api.channel>CCNA Customer Care Product Locator</google.api.channel>
+			</properties>
+		</profile>
+	</profiles>
+
+
+	<dependencyManagement>
+		<dependencies>
+
+			<!-- Spring -->
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>${org.springframework-version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>commons-logging</groupId>
+						<artifactId>commons-logging</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${org.springframework-version}</version>
+				<exclusions>
+					<!-- Exclude Commons Logging in favor of SLF4j -->
+					<exclusion>
+						<groupId>commons-logging</groupId>
+						<artifactId>commons-logging</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-webmvc</artifactId>
+				<version>${org.springframework-version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>${org.springframework-version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-oxm</artifactId>
+				<version>${org.springframework-version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context-support</artifactId>
+				<version>${org.springframework-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-tx</artifactId>
+				<version>${org.springframework-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-jdbc</artifactId>
+				<version>${org.springframework-version}</version>
+			</dependency>
+
+			<!-- Spring Security -->
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-core</artifactId>
+				<version>${org.springsecurity-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-web</artifactId>
+				<version>${org.springsecurity-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-config</artifactId>
+				<version>${org.springsecurity-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.springframework.security</groupId>
+				<artifactId>spring-security-taglibs</artifactId>
+				<version>${org.springsecurity-version}</version>
+			</dependency>
+
+
+			<!-- AspectJ -->
+			<!-- dependency> <groupId>org.aspectj</groupId> <artifactId>aspectjrt</artifactId> 
+				<version>${org.aspectj-version}</version> </dependency -->
+
+			<!-- AOP dependency -->
+			<!-- dependency> <groupId>cglib</groupId> <artifactId>cglib</artifactId> 
+				<version>${cglib-version}</version> </dependency -->
+
+			<!-- Jackson JSON Mapper -->
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-core</artifactId>
+				<version>${jackson-version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-annotations</artifactId>
+				<version>${jackson-version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-databind</artifactId>
+				<version>${jackson-version}</version>
+			</dependency>
+
+			<!-- Ehcache -->
+			<dependency>
+				<groupId>net.sf.ehcache</groupId>
+				<artifactId>ehcache-core</artifactId>
+				<version>${ehcache-version}</version>
+			</dependency>
+
+			<!-- Apache POI -->
+			<dependency>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>poi</artifactId>
+				<version>${org.apache.poi-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>poi-ooxml</artifactId>
+				<version>${org.apache.poi-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>poi-scratchpad</artifactId>
+				<version>${org.apache.poi-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.apache.poi</groupId>
+				<artifactId>poi-ooxml-schemas</artifactId>
+				<version>${org.apache.poi-version}</version>
+			</dependency>
+
+			<!-- Apache Commons Codec -->
+			<dependency>
+				<groupId>commons-codec</groupId>
+				<artifactId>commons-codec</artifactId>
+				<version>${commons-codec-version}</version>
+			</dependency>
+
+
+			<!-- lowagie.com iText -->
+			<dependency>
+				<groupId>com.lowagie</groupId>
+				<artifactId>itext</artifactId>
+				<version>${itext-version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>bouncycastle</groupId>
+						<artifactId>bcmail-jdk14</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>bouncycastle</groupId>
+						<artifactId>bcprov-jdk14</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>bouncycastle</groupId>
+						<artifactId>bctsp-jdk14</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+
+			<!-- Logging -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${org.slf4j-version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>jcl-over-slf4j</artifactId>
+				<version>${org.slf4j-version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>${org.slf4j-version}</version>
+				<scope>runtime</scope>
+			</dependency>
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>${log4j-version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>javax.mail</groupId>
+						<artifactId>mail</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>javax.jms</groupId>
+						<artifactId>jms</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>com.sun.jdmk</groupId>
+						<artifactId>jmxtools</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>com.sun.jmx</groupId>
+						<artifactId>jmxri</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+
+			<!-- @Inject -->
+			<dependency>
+				<groupId>javax.inject</groupId>
+				<artifactId>javax.inject</artifactId>
+				<version>1</version>
+			</dependency>
+
+			<!-- Servlet -->
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>servlet-api</artifactId>
+				<version>2.5</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>javax.servlet.jsp</groupId>
+				<artifactId>jsp-api</artifactId>
+				<version>${jsp-api-version}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>jstl</artifactId>
+				<version>1.2</version>
+			</dependency>
+
+			<!-- Test -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit-version}</version>
+				<scope>test</scope>
+			</dependency>
+
+
+			<dependency>
+				<groupId>org.kohsuke</groupId>
+				<artifactId>asm5</artifactId>
+				<version>${asm-version}</version>
+			</dependency>
+			<dependency>
+				<groupId>javax.validation</groupId>
+				<artifactId>validation-api</artifactId>
+				<version>${validation-api-version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.oracle</groupId>
+				<artifactId>ojdbc6</artifactId>
+				<version>${oracle-jdbc-version}</version>
+			</dependency>
+
+
+		</dependencies>
+
+	</dependencyManagement>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.jasig.maven</groupId>
+					<artifactId>sass-maven-plugin</artifactId>
+					<version>${sass-maven-plugin-version}</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+</project>

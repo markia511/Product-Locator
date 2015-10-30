@@ -1,0 +1,6 @@
+com\ko\lct\web\gfruit\repository\LocatorRepository.class
+com\ko\lct\web\gfruit\repository\LocatorCache.class
+com\ko\lct\web\gfruit\repository\WebServiceLocatorCache.class
+com\ko\lct\web\gfruit\LocatorForm.class
+com\ko\lct\web\gfruit\config\WebConfig.class
+com\ko\lct\web\gfruit\HomeController.class

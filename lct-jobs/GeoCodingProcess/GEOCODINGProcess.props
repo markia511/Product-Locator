@@ -1,0 +1,31 @@
+LOGFILE_PATH         =.//logs
+LOGFILE_NAME         =load_data_job
+IMPORT_FILE_PATH     =.//CBSData
+IMPORT_FILE_NAME     =
+PROCESSED_DATA_PATH  =.//processed
+START_PARSING_ROW    =0
+PROCESS_ARRAY_SIZE   =1500000
+
+EXPORT_PATH          =./export
+
+NIELSON_IMPORT_FILE_PATH     =.//NielsonData
+NIELSON_START_PARSING_ROW    =0
+
+
+Database	 =jdbc:oracle:thin:@EVBYMINSD41A8.minsk.epam.com:1521:XE
+Schema		 =PROLOCWEB
+UserID		 =PROLOCWEB
+Password     =lZmZfdq
+
+limitGeocode	 =1000
+googleClientId	 =
+#gme-thecocacolacompany
+googlePrivateKey =
+#fYL_6n613b_FbsTm8SyBgSSyqYw=
+
+host             =owamsq.epam.com
+port             =25
+emails           =Kiryl_Vadanosau@epam.com
+smtpUserName     =
+smtpUserPassword =
+mail_from        =Kiryl_Vadanosau@epam.com

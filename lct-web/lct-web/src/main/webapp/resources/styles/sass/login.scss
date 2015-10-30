@@ -1,0 +1,136 @@
+@import '_variables';
+@import '_mixins';
+
+@CHARSET "UTF-8";
+
+html {
+  color: black;
+}
+
+body {
+  font-family: arial,helvetica,sans-serif;
+  font-size: 0.8125em;
+  background-color: #47484D;
+}
+
+div, form {
+  display: block;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+h2 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #444;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+
+form td {
+  padding: 5px 0;
+  vertical-align: top;
+  label {
+    margin-right: 20px;
+  }
+}
+
+a {
+  color: #039;
+  text-decoration: underline;
+}
+
+.header {
+  background: #47484d url('../images/masthead.jpg') top left no-repeat;
+  height: 105px;
+  position: relative;
+  h1 {
+    text-indent: -10000px;
+  }
+}
+
+.container {
+  padding-top: 30px;
+  padding-bottom: 20px;
+  background: white;
+  min-height: 315px;
+}
+
+.clearfix {
+  &::after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+  display: block;
+}
+
+.content {
+  margin: auto;
+}
+
+.col-1 {
+  width: 545px;
+  float: left;
+  margin-right: 20px;
+}
+
+.box {
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 2px solid #CCC;
+  height: 290px;
+  h2 {
+    text-align: center;
+  }
+}
+
+.reset-password {
+  font-size: 11px;
+}
+
+.signin {
+  width: 91px;
+  height: 29px;
+  margin: 0px 0px 0;
+  float: left;
+  text-indent: -9999px;
+  background: url(../images/btn_signin.jpg);
+  border: 0;
+}
+
+.errorblock {
+  color: red;
+  font-weight: bold;
+}
+
+.footer {
+  padding: 20px 10px;
+  background: #47484D;
+  font-size: 11px;
+  color: white;
+  margin: 0px;
+  a {
+    color: white;
+  }
+}

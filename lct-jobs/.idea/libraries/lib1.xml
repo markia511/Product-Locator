@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="lib1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/GeoCodingProcess/lib/javax.mail.jar!/" />
+      <root url="jar://$PROJECT_DIR$/GeoCodingProcess/lib/poi-3.10-FINAL.jar!/" />
+      <root url="jar://$PROJECT_DIR$/GeoCodingProcess/lib/ojdbc6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/GeoCodingProcess/lib/commons-compress-1.4.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/GeoCodingProcess/lib/commons-codec-1.6.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
